@@ -1,0 +1,52 @@
+-----------------------------------------------------------------------------------------
+- NinjaPolis -
+-----------------------------------------------------------------------------------------
+Arbol jerarquico:
+  - Login
+    - Register
+    - Pagina principal
+      - Secciones
+        - Aldeas
+        - Estadisticas
+        - Historia ninja
+        - Dinamicas
+        - Autogestion
+        - Perfil
+-----------------------------------------------------------------------------------------
+Diseño:
+  - color primario:
+  - color secundario:
+  - fuente primaria:
+  - fuente secundaria:
+  
+-----------------------------------------------------------------------------------------
+Especificaciones por seccion:
+Login:
+  -
+  -
+Register:
+  -
+  -
+Pagina principal:
+  - 
+  -
+Aldeas:
+  -
+  -
+Estadisticas:
+  -
+  -
+Historia ninja:
+  -
+  -
+Dinamicas:
+  -
+  -
+Autogestion:
+  -
+  -
+Perfil:
+  -
+  -
+-----------------------------------------------------------------------------------------  
+  
