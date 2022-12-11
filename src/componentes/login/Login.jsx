@@ -23,13 +23,12 @@ const Login = ()=>{
     }
     const redirRegistro = (e)=>{
         e.preventDefault();
-        console.log(e.target.id)
+        console.log(e.target.id.value)
 
         const { registrarme } = e.target.id;
-        const reg = registrarme.value;
+        const reg = registrarme;
 
         reg === "registrarme" ? setHacerRegistro(false) : setHacerRegistro(true);
-
     }
 
     return(
@@ -47,11 +46,11 @@ const Login = ()=>{
                 <button className="btn form-control btnLogin" >Entrar</button>
                 
                 <label className="my-4" > 
-                    <button id="registrarme" onClick={redirRegistro}> ¿No tienes cuenta?  |  Registrarme </button>
+                    <button id="registrarme" className="btn text-secondary" onClick={redirRegistro}> ¿No tienes cuenta?  |  Registrarme </button>
                 </label>
                
                 <br/>
-                <label className="my-0">NinjaPolis</label>
+                <label className="my-0 text-secondary">NinjaPolis</label>
                 { correcto && <Navigate to="/paginaPrincipal"/> }
                 { hacerRegistro && <Navigate to="/register" /> }
             </form>
