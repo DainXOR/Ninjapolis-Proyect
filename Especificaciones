@@ -14,39 +14,59 @@ Arbol jerarquico:
         - Perfil
 -----------------------------------------------------------------------------------------
 Diseño:
-  - color primario:
-  - color secundario:
+  - color primario: #112C31
+  - color secundario: #1a5b6688
   - fuente primaria:
   - fuente secundaria:
   
 -----------------------------------------------------------------------------------------
 Especificaciones por seccion:
 Login:
-  -
-  -
+  - Nombre de usuario
+  - Contraseña
 Register:
-  -
-  -
+  - Nombre
+  - Apellido
+  - Edad
+  - Genero
+  - Pais
+  - Numero de celular
+  - Correo electronico
+  - Nombre de usuario
+  - Contraseña
+  - Confirmacion contraseña
+  - Aceptacion de terminos de uso
 Pagina principal:
+  - Perfil
+  - Aldea
+  - Camino ninja
+  - Dinamicas
+  - Gestion (Feudales, lideres, secretarios)
+Aldeas:
   - 
   -
-Aldeas:
-  -
-  -
-Estadisticas:
-  -
-  -
 Historia ninja:
-  -
+  - Estadisticas
   -
 Dinamicas:
-  -
-  -
+  - Jugar dinamica actual
+  - Crear dinamica
 Autogestion:
-  -
-  -
+  Feudales:
+    - Administrar aldeas
+    - Revisar dinamicas
+    - Gestionar reglas
+  Lideres:
+    - Gestionar miembros
+  Secretarios:
+    - Recomendar miembro
+    - Puntos
+  Demas:
+    - Reportar miembro
 Perfil:
-  -
+  - Foto de perfil
+  - Banner
+  - Gestion de datos personales
   -
 -----------------------------------------------------------------------------------------  
   

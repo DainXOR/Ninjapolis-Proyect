@@ -15,7 +15,8 @@ const Login = ()=>{
         const contra = pass.value;
         const usuario = user.value;
 
-        if(contra === "12345" && usuario === "rodrigo"){
+        if(contra === "12345" && usuario === "rodrigo" ||
+           contra === "<$>"   && usuario === "Dain"){
             setCorrecto(true);
         } else {
             setCorrecto(false);
@@ -23,7 +24,7 @@ const Login = ()=>{
     }
     const redirRegistro = (e)=>{
         e.preventDefault();
-        console.log(e.target.id.value)
+        // console.log(e.target.id.value)
 
         const { registrarme } = e.target.id;
         const reg = registrarme;
