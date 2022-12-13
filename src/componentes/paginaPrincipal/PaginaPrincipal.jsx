@@ -1,7 +1,14 @@
+import "../../App.css"
+import BtnAldeas from "../btnAldeas/BtnAldeas";
+
 const PaginaPrincipal = ()=> {
     return(
-        <div>
-            Pagina Principal
+        <div className="fondoPrincipalContenedor">
+            <h2>Pagina Principal</h2>
+
+
+
+            <BtnAldeas/>
         </div>
     )
 }

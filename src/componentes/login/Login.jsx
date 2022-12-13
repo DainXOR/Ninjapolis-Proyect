@@ -1,7 +1,6 @@
 import "../../App.css"
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import PaginaPrincipal from "../paginaPrincipal/PaginaPrincipal";
 
 const Login = ()=>{
 
@@ -24,7 +23,6 @@ const Login = ()=>{
     }
     const redirRegistro = (e)=>{
         e.preventDefault();
-        // console.log(e.target.id.value)
 
         const { registrarme } = e.target.id;
         const reg = registrarme;
@@ -52,8 +50,8 @@ const Login = ()=>{
                
                 <br/>
                 <label className="my-0 text-secondary">NinjaPolis</label>
-                { correcto && <Navigate to="/paginaPrincipal"/> }
-                { hacerRegistro && <Navigate to="/register" /> }
+                { correcto && <Navigate replace to="/paginaPrincipal"/> }
+                { hacerRegistro && <Navigate replace to="/register" /> }
             </form>
         </div>
     )
