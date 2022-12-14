@@ -1,3 +1,4 @@
+/*  Boton - Menu de Aldeas  */
 .contenedorBtn{
     width: 200px;
     height: 200px;
@@ -13,7 +14,6 @@
     animation-name: example;
     animation-duration: 200ms;
     box-shadow: 0px 2px 5px #0a1a1de1;
-
 }
 .btnAldeaIndividual{
     width: 40px;
@@ -27,6 +27,12 @@
     border: 0px;
     box-shadow: 0px 2px 5px #0a1a1de1;
 }
+.imgBtn{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ab/Simbolo_konoha.svg");
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .btnMenu{
     border: 0px;
     bottom: 0;
@@ -35,10 +41,6 @@
 .btnUno{
     top: 0;
     right: 0;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ab/Simbolo_konoha.svg");
-    background-size: 28px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .btnDos{
     top: 0;
@@ -48,18 +50,10 @@
     margin: auto;
     top: 30px;
     right: 50px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ab/Simbolo_konoha.svg");
-    background-size: 28px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .btnTres{
     bottom: 0;
     left: 0;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ab/Simbolo_konoha.svg");
-    background-size: 28px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .btnCuatro{
     top: 0;
@@ -69,19 +63,14 @@
     margin: auto;
     bottom: 50px;
     left: 30px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/ab/Simbolo_konoha.svg");
-    background-size: 28px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-.contenedorBtn img{
-    
-}
-
-@keyframes example {
+@keyframes example{
     0% {width: 0px; margin-right: 40px; transform: scale(.2); opacity: 0;}
     40% { opacity: .0;}
     70% { opacity: .3;}
     100% {width: 200px;opacity: 1;}
-  }
+}
+
+
+/*  Boton - Menu regerar a la pagina principal  */

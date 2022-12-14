@@ -6,6 +6,7 @@ import Login from './componentes/login/Login';
 import Register from './componentes/register/register';
 import NotFound from './componentes/NotFound';
 import PaginaPrincipal from './componentes/paginaPrincipal/PaginaPrincipal';
+
 // Aldeas
 import Sunagakure from './componentes/secciones/aldeas/Sunagakure';
 import Iwagakure from './componentes/secciones/aldeas/Iwagakure';

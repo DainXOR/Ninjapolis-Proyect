@@ -36,10 +36,10 @@ const BtnAldeas = ()=>{
                 mostrar ?
                     <div className="contenedorBtn">
                         <button className="btnAldeaIndividual btnMenu" onClick={mostrarBtn}>M</button>
-                        <button className="btnAldeaIndividual btnUno" id="suna" onClick={direccionar}>  </button>
-                        <button className="btnAldeaIndividual btnDos" id="iwa" onClick={direccionar}>  </button>
-                        <button className="btnAldeaIndividual btnTres" id="kiri" onClick={direccionar}>  </button>
-                        <button className="btnAldeaIndividual btnCuatro" id="konoha" onClick={direccionar}>  </button>
+                        <button className="btnAldeaIndividual btnUno imgBtn" id="suna" onClick={direccionar}>  </button>
+                        <button className="btnAldeaIndividual btnDos imgBtn" id="iwa" onClick={direccionar}>  </button>
+                        <button className="btnAldeaIndividual btnTres imgBtn" id="kiri" onClick={direccionar}>  </button>
+                        <button className="btnAldeaIndividual btnCuatro imgBtn" id="konoha" onClick={direccionar}>  </button>
                     </div>
                     :
                     <div >
