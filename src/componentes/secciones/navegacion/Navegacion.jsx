@@ -1,4 +1,19 @@
+import Autogestion from "../autogestion/Autogestion";
+
+
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+
 const Navegacion = ()=>{
+
+    const [gestion, setGestion] = useState(false);
+
+    const enviarGestion = (e)=>{
+        e.preventDefault();
+
+        e? setGestion(true) : setGestion(false);
+    }
+
     return(
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -10,10 +25,13 @@ const Navegacion = ()=>{
                     <div className="navbar-nav d-flex justify-content-end">
                         <label className="nav-link">Dinamicas</label>
                         <label className="nav-link">Perfil</label>
-                        <label className="nav-link">Autogestion</label>
+                        <button onClick={enviarGestion} className="nav-link">Autogestion</button>
                     </div>
                 </div>
             </div>
+            {
+                gestion && <Navigate to="/gestion"/>
+            }
         </nav>
     )
 }

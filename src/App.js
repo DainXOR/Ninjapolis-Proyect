@@ -6,6 +6,7 @@ import Login from './componentes/login/Login';
 import Register from './componentes/register/register';
 import NotFound from './componentes/NotFound';
 import PaginaPrincipal from './componentes/paginaPrincipal/PaginaPrincipal';
+import Autogestion from './componentes/secciones/autogestion/Autogestion';
 
 // Aldeas
 import Sunagakure from './componentes/secciones/aldeas/Sunagakure';
@@ -20,10 +21,11 @@ function App() {
         <Route exact path="/" element={<Login/>}/>
         <Route exact path="/register" element={<Register/>}/>
         <Route exact path="/paginaPrincipal" element={<PaginaPrincipal/>} />
-          <Route exct path="/aldeas/sunagakure" element={<Sunagakure/>}/>
-          <Route exct path="/aldeas/iwagakure" element={<Iwagakure/>}/>
-          <Route exct path="/aldeas/kirigakure" element={<Kirigakure/>}/>
-          <Route exct path="/aldeas/konoha" element={<Konoha/>}/>
+          <Route exact path="/gestion" element={<Autogestion/>} />
+          <Route exact path="/aldeas/sunagakure" element={<Sunagakure/>}/>
+          <Route exact path="/aldeas/iwagakure" element={<Iwagakure/>}/>
+          <Route exact path="/aldeas/kirigakure" element={<Kirigakure/>}/>
+          <Route exact path="/aldeas/konoha" element={<Konoha/>}/>
 
         <Route exact path="/notFound" element={<NotFound/>}/>
       </Routes>
