@@ -1,0 +1,80 @@
+.contPerfil{
+    background-color: #112C31;
+    width: 100vw;
+    height: 100vh;
+    color:rgb(209, 214, 219);
+}
+.contCuadroPrincipal{
+    width: 250px;
+    max-width: 250px;
+    height: 250px;
+    background-color: #466e7588;
+    margin: auto;
+    margin-bottom: 15px;
+}
+.contCuadroPrincipal img{
+    width: 250px;
+}
+
+
+/* Color de Piel */
+.contElegirColor{
+    display: flex;
+    justify-content: space-around;
+}
+.elegirColor{
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 2px 1px rgb(104, 104, 104);
+
+}
+.c0{
+    background-color: #eee2d7;
+}
+.c1{
+    background-color: #f4ddca;
+}
+.c2{
+    background-color: #ccb4a5;
+}
+.c3{
+    background-color: #7b9da5;
+}
+.c4{
+    background-color: #7cad97;
+}
+.c5{
+    background-color: #787199;
+}
+.c6{
+    background-color: #a08d82;
+}
+.c7{
+    background-color: #756860;
+}
+.c8{
+    background-color: #4d4540;
+}
+.c9{
+    background-color: #375270;
+}
+.c10{
+    background-color: #3f5b42;
+}
+
+/* Bandana */
+.contElegirBandana{
+    display: flex;
+}
+.contElegirBandana label{
+    margin-right: 15px;
+}
+.elegirBandana{
+    width: 70px;
+    height: 30px;
+    background-color: #112C31;
+    text-align: center;
+    box-shadow: 0px 2px 12px #000;
+    border-radius: 5px;
+    margin-right: 5px;
+}
