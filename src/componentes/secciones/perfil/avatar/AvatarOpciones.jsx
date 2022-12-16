@@ -17,41 +17,58 @@ import bandanaUno from "./caracterAvatar/piel/bandana-uno.svg";
 import bandanaDos from "./caracterAvatar/piel/bandana-dos.svg";
 import bandanaTres from "./caracterAvatar/piel/bandana-tres.svg";
 import bandanaCuatro from "./caracterAvatar/piel/bandana-cuatro.svg";
+import bandanaCinco from "./caracterAvatar/piel/bandana-cinco.svg";
+// aldeas
 import aldeaUno from "./caracterAvatar/piel/aldea-uno.svg";
+import aldeaDos from "./caracterAvatar/piel/aldea-dos.svg";
+import aldeaTres from "./caracterAvatar/piel/aldea-tres.svg";
+import aldeaCuatro from "./caracterAvatar/piel/aldea-cuatro.svg";
 import aldeaTachado from "./caracterAvatar/piel/aldea-tachado.svg";
+// Mascaras
+import mascaraUno from "./caracterAvatar/piel/mascara-uno.svg";   
+import mascaraDos from "./caracterAvatar/piel/mascara-dos.svg";  
+import mascaraTres from "./caracterAvatar/piel/mascara-tres.svg";
+import mascaraCuatro from "./caracterAvatar/piel/mascara-cuatro.svg";
+import mascaraCinco from "./caracterAvatar/piel/mascara-cinco.svg";
+import mascaraSeis from "./caracterAvatar/piel/mascara-seis.svg";   // 1) Subir diseño a la carpeta piel (por ahora)
+import mascaraSiete from "./caracterAvatar/piel/mascara-siete.svg"; // <---2) Importar la imagen de esta forma
 
 const AvatarOpciones = ()=>{
 
-    // tarea: condicionar la bandana con los simbolos de las aldeas, dependencia uno de otro
-
-    let pielArreglo = [pielUno, pielDos, pielTres, pielCuatro, pielCinco, 
-                       pielSeis, pielSiete, pielOcho, pielNueve, pielDies, pielOnce];
-    let bandanaArreglo = [bandanaUno, bandanaDos, bandanaTres, bandanaCuatro];
-    let aldeaArreglo = [aldeaUno];
+    // tarea: condicionar la bandana con los simbolos de las aldeas, dependencia uno de otro(si no hay bandana, no tiene que haber simbolo)
+    let pielArreglo = [pielUno, pielDos, pielTres, pielCuatro, pielCinco, pielSeis, pielSiete, 
+                       pielOcho, pielNueve, pielDies, pielOnce];
+    let bandanaArreglo = [bandanaUno, bandanaDos, bandanaTres, bandanaCuatro, 
+                          bandanaCinco];   // <--- 3) Crear el arreglo con los import del mismo tipo
+    let aldeaArreglo = [aldeaUno, aldeaDos, aldeaTres, aldeaCuatro];
+    let mascaraArreglo = [mascaraUno, mascaraDos, mascaraTres, mascaraCuatro, mascaraCinco, 
+                          mascaraSeis, mascaraSiete];
     
-    const [ piel, setPiel ] = useState(pielArreglo[0]); // cargar las pieles
-    const [ bandana, setbandana ] = useState(bandanaArreglo[0]); // cargar las bandanas
-    const [ mostrarBandana, setMostrarBandana ] = useState(false); 
-    const [ aldea, setAldea ] = useState(aldeaArreglo[0]); // cargar las aldeas
+    const [ piel, setPiel ] = useState(pielArreglo[0]); 
+    const [ bandana, setbandana ] = useState(bandanaArreglo[0]); // <--- 4) Cargar el arreglo e inicializarlo en la p 0
+    const [ mostrarBandana, setMostrarBandana ] = useState(false); // <--- 5) inicilizar en "false" la condicion para mostrar la imagen / Solo la piel se muestra desde el principio, las demas no deben
+    const [ aldea, setAldea ] = useState(aldeaArreglo[0]); 
     const [ mostrarAldea, setMostrarAldea ] = useState(false);
+    const [ mascara, setMascara ] = useState(mascaraArreglo);
+    const [ mostrarMascara, setMostrarMascara ] = useState(false);
 
-    const [tach, setTach] = useState(false); 
+    const [tach, setTach] = useState(false); // tachar bandana
     
-    const agregarPiel = (e)=>{
+    const agregarPiel = (e)=>{ 
         for (let i = 0; i < pielArreglo.length; i++) {
             if(e.target.id == i){
                 setPiel(pielArreglo[i]);
             }
         }
     }
-    const agregarBandana = (e)=>{
+    const agregarBandana = (e)=>{   // 6) funcion para agregar la imagen - ir cambiando estos nombres por su categoria 
         for (let i = 0; i < bandanaArreglo.length; i++) {
             if(e.target.id == i){
                 setMostrarBandana(true);
                 setbandana(bandanaArreglo[i]);
             }
-            if(e.target.id == 4){
-                setMostrarBandana(false);
+            if(e.target.id == 5){
+                setMostrarBandana(false); // boton de quitar
             }
         }
     }
@@ -70,7 +87,18 @@ const AvatarOpciones = ()=>{
             setTach(false);
         }
     }
-
+    const agregarMascara = (e)=>{
+        for (let i = 0; i < mascaraArreglo.length; i++) {
+            if(e.target.id == i){
+                setMostrarMascara(true);
+                setMascara(mascaraArreglo[i]);
+            }
+            if(e.target.id == 7){
+                setMostrarMascara(false); //boton de quitar
+            }
+        }
+    }
+    /* tarea: Luego cambiar la parte del cuerpo, para ahorrar lineas  */
     return(
         <div>
             <div className="">
@@ -79,10 +107,11 @@ const AvatarOpciones = ()=>{
                     {mostrarBandana && <img alt="" className="position-absolute" src={bandana} />} 
                     {mostrarAldea && <img alt="" className="position-absolute" src={aldea} />} 
                     {tach && <img alt="" className="position-absolute" src={aldeaTachado} />} 
+                    {mostrarMascara && <img alt="" className="position-absolute" src={mascara} />}  {/* 7) Colocar de esta forma las variables de la parte 4 y 5, ej: mostrar(nombreDeCategoria) y (categoria) - dependiendo de su importancia, estar atento al orden. Por ej: una mascara siempre va encima de la boca, asi que primero se pone la boca, y debajo(en el codigo) la mascara  */}
                 </div>
                 
                 <div>
-                    <div className="accordion" id="accordionExample">
+                    <div className="accordion" id="accordionExample"> {/* 8) copiar este div y pegarlo en la ultima fila (estar atento de como empieza y terminan los divs)  */}
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="headingOne">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -91,11 +120,11 @@ const AvatarOpciones = ()=>{
                             </h2>
                             <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
-                                    <div className="contElegirColor">
-                                        <div onClick={agregarPiel} id="0" className="elegirColor c0"></div>
+                                    <div className="contElegirColor"> {/* 9) En los "OnClick" poner el nombre de la funcion(categoria) */}
+                                        <div onClick={agregarPiel} id="0" className="elegirColor c0"> {/* Aqui se podria poner un nombre */} </div>
                                         <div onClick={agregarPiel} id="1" className="elegirColor c1"></div>
-                                        <div onClick={agregarPiel} id="2" className="elegirColor c2"></div>
-                                        <div onClick={agregarPiel} id="3" className="elegirColor c3"></div>
+                                        <div onClick={agregarPiel} id="2" className="elegirColor c2"></div>{/*"elegirColor":no usar en otro lado */}
+                                        <div onClick={agregarPiel} id="3" className="elegirColor c3"></div>{/* podes cambiarlo por "elegirBandana" */}
                                         <div onClick={agregarPiel} id="4" className="elegirColor c4"></div>
                                         <div onClick={agregarPiel} id="5" className="elegirColor c5"></div>
                                         <div onClick={agregarPiel} id="6" className="elegirColor c6"></div>
@@ -124,15 +153,39 @@ const AvatarOpciones = ()=>{
                                         <div onClick={agregarBandana} id="1" className="elegirBandana">Blanca</div>
                                         <div onClick={agregarBandana} id="2" className="elegirBandana">Oscura</div>
                                         <div onClick={agregarBandana} id="3" className="elegirBandana">Azul</div>
-                                        <div onClick={agregarBandana} id="4" className="elegirBandana">Quitar</div>
+                                        <div onClick={agregarBandana} id="4" className="elegirBandana">Rosa</div>
+                                        <div onClick={agregarBandana} id="5" className="elegirBandana">Quitar</div>
                                     </div>
                                     <div className="contElegirBandana my-3">
                                         <label>Aldea: </label>
                                         <div onClick={agregarAldea} id="0" className="elegirBandana">Suna</div>
-                                        <div  id="1" className="elegirBandana">Konoha</div>
-                                        <div  id="2" className="elegirBandana">Iwa</div>
-                                        <div  id="3" className="elegirBandana">Kiri</div>
+                                        <div onClick={agregarAldea} id="1" className="elegirBandana">Iwa</div>
+                                        <div onClick={agregarAldea} id="2" className="elegirBandana">Kiri</div>
+                                        <div onClick={agregarAldea} id="3" className="elegirBandana">Konoha</div>
                                         <div onClick={agregarTachar} id="4" className="elegirBandana">Tachar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="accordion" id="accordionExample">
+                        <div className="accordion-item">
+                            <h2 className="accordion-header" id="headingThree">
+                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                Mascaras
+                            </button>
+                            </h2>
+                            <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div className="accordion-body">
+                                    <div className="contElegirColor">
+                                        <div onClick={agregarMascara} id="0" className="elegirBandana c0">1</div>
+                                        <div onClick={agregarMascara} id="1" className="elegirBandana c0">2</div>
+                                        <div onClick={agregarMascara} id="2" className="elegirBandana c0">3</div>
+                                        <div onClick={agregarMascara} id="3" className="elegirBandana c0">4</div>
+                                        <div onClick={agregarMascara} id="4" className="elegirBandana c0">5</div>
+                                        <div onClick={agregarMascara} id="5" className="elegirBandana c0">6</div>
+                                        <div onClick={agregarMascara} id="6" className="elegirBandana c0">7</div>
+                                        <div onClick={agregarMascara} id="7" className="elegirBandana c0">Quitar</div>
                                     </div>
                                 </div>
                             </div>
