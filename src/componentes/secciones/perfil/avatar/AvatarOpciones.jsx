@@ -23,7 +23,6 @@ import aldeaUno from "./caracterAvatar/piel/aldea-uno.svg";
 import aldeaDos from "./caracterAvatar/piel/aldea-dos.svg";
 import aldeaTres from "./caracterAvatar/piel/aldea-tres.svg";
 import aldeaCuatro from "./caracterAvatar/piel/aldea-cuatro.svg";
-import aldeaTachado from "./caracterAvatar/piel/aldea-tachado.svg";
 // Mascaras
 import mascaraUno from "./caracterAvatar/piel/mascara-uno.svg";   
 import mascaraDos from "./caracterAvatar/piel/mascara-dos.svg";  
@@ -32,10 +31,22 @@ import mascaraCuatro from "./caracterAvatar/piel/mascara-cuatro.svg";
 import mascaraCinco from "./caracterAvatar/piel/mascara-cinco.svg";
 import mascaraSeis from "./caracterAvatar/piel/mascara-seis.svg";   // 1) Subir diseño a la carpeta piel (por ahora)
 import mascaraSiete from "./caracterAvatar/piel/mascara-siete.svg"; // <---2) Importar la imagen de esta forma
+// Rayones
+import scratchStrike from "./caracterAvatar/piel/aldea-tachado.svg";
+import scratchStrikes from "./caracterAvatar/piel/aldea-tachado.svg";
+import scratchRust from "./caracterAvatar/piel/aldea-tachado.svg";
+import scratchBite from "./caracterAvatar/piel/aldea-tachado.svg";
+import scratchTorn from "./caracterAvatar/piel/aldea-tachado.svg";
+//import scratchStrikes from "./caracterAvatar/scratch/strike_2.svg";
+//import scratchRust from "./caracterAvatar/scratch/rust_1.svg";
+//import scratchBite from "./caracterAvatar/scratch/bite_1.svg";
+//import scratchTorn from "./caracterAvatar/scratch/torn_1.svg";
+
 
 const AvatarOpciones = ()=>{
 
     // tarea: condicionar la bandana con los simbolos de las aldeas, dependencia uno de otro(si no hay bandana, no tiene que haber simbolo)
+    // > Challenge: Accepted ;)
     let pielArreglo = [pielUno, pielDos, pielTres, pielCuatro, pielCinco, pielSeis, pielSiete, 
                        pielOcho, pielNueve, pielDies, pielOnce];
     let bandanaArreglo = [bandanaUno, bandanaDos, bandanaTres, bandanaCuatro, 
@@ -43,59 +54,64 @@ const AvatarOpciones = ()=>{
     let aldeaArreglo = [aldeaUno, aldeaDos, aldeaTres, aldeaCuatro];
     let mascaraArreglo = [mascaraUno, mascaraDos, mascaraTres, mascaraCuatro, mascaraCinco, 
                           mascaraSeis, mascaraSiete];
-    
+
+    let scratchTypes = [scratchStrike, scratchStrikes, scratchRust, scratchBite, scratchTorn];
+
     const [ piel, setPiel ] = useState(pielArreglo[0]); 
+
     const [ bandana, setbandana ] = useState(bandanaArreglo[0]); // <--- 4) Cargar el arreglo e inicializarlo en la p 0
     const [ mostrarBandana, setMostrarBandana ] = useState(false); // <--- 5) inicilizar en "false" la condicion para mostrar la imagen / Solo la piel se muestra desde el principio, las demas no deben
+
     const [ aldea, setAldea ] = useState(aldeaArreglo[0]); 
     const [ mostrarAldea, setMostrarAldea ] = useState(false);
+
     const [ mascara, setMascara ] = useState(mascaraArreglo);
     const [ mostrarMascara, setMostrarMascara ] = useState(false);
 
-    const [tach, setTach] = useState(false); // tachar bandana
+    const [scratch, setScratch] = useState(scratchTypes[0]); // tachar bandana
+    const [showScratch, setScratchVisible] = useState(false); // tachar bandana
     
-    const agregarPiel = (e)=>{ 
-        for (let i = 0; i < pielArreglo.length; i++) {
-            if(e.target.id == i){
-                setPiel(pielArreglo[i]);
-            }
-        }
+    
+    const agregarPiel = (e)=>{
+        setPiel(pielArreglo[e.target.id]);
     }
-    const agregarBandana = (e)=>{   // 6) funcion para agregar la imagen - ir cambiando estos nombres por su categoria 
-        for (let i = 0; i < bandanaArreglo.length; i++) {
-            if(e.target.id == i){
-                setMostrarBandana(true);
-                setbandana(bandanaArreglo[i]);
-            }
-            if(e.target.id == 5){
-                setMostrarBandana(false); // boton de quitar
-            }
+    const agregarBandana = (e)=>{   // 6) funcion para agregar la imagen - ir cambiando estos nombres por su categoria     
+        if(e.target.id == 0){
+            setMostrarBandana(false); // boton de quitar
+            setMostrarAldea(false);
+            setScratch(false);
+
+        } else {
+            setMostrarBandana(true);
+            setbandana(bandanaArreglo[e.target.id - 1]);
         }
+    
     }
     const agregarAldea = (e)=>{
-        for (let i = 0; i < aldeaArreglo.length; i++) {
-            if(e.target.id == i){
-                setMostrarAldea(true);
-                setAldea(aldeaArreglo[i]);
-            }
+        if(e.target.id == 0) {
+            setMostrarAldea(false);
+
+        } else if(mostrarBandana == true) {
+            setMostrarAldea(true);
+            setAldea(aldeaArreglo[e.target.id - 1]);
         }
     }
     const agregarTachar = (e)=>{
-        if(e.target.id == 4){
-            setTach(true);
-        } else {
-            setTach(false);
+        if(e.target.id == 0){
+            setScratchVisible(false);
+            
+        } else if(mostrarBandana == true) {
+            setScratchVisible(true);
+            setScratch(scratchTypes[e.target.id - 1]);
         }
     }
     const agregarMascara = (e)=>{
-        for (let i = 0; i < mascaraArreglo.length; i++) {
-            if(e.target.id == i){
-                setMostrarMascara(true);
-                setMascara(mascaraArreglo[i]);
-            }
-            if(e.target.id == 7){
-                setMostrarMascara(false); //boton de quitar
-            }
+        if(e.target.id == 0){
+            setMostrarMascara(false); //boton de quitar
+            
+        } else {
+            setMostrarMascara(true);
+            setMascara(mascaraArreglo[e.target.id - 1]);
         }
     }
     /* tarea: Luego cambiar la parte del cuerpo, para ahorrar lineas  */
@@ -106,7 +122,7 @@ const AvatarOpciones = ()=>{
                     <img alt="color de piel" className="position-absolute" src={piel} />
                     {mostrarBandana && <img alt="" className="position-absolute" src={bandana} />} 
                     {mostrarAldea && <img alt="" className="position-absolute" src={aldea} />} 
-                    {tach && <img alt="" className="position-absolute" src={aldeaTachado} />} 
+                    {showScratch && <img alt="" className="position-absolute" src={scratch} />} 
                     {mostrarMascara && <img alt="" className="position-absolute" src={mascara} />}  {/* 7) Colocar de esta forma las variables de la parte 4 y 5, ej: mostrar(nombreDeCategoria) y (categoria) - dependiendo de su importancia, estar atento al orden. Por ej: una mascara siempre va encima de la boca, asi que primero se pone la boca, y debajo(en el codigo) la mascara  */}
                 </div>
                 
@@ -149,20 +165,29 @@ const AvatarOpciones = ()=>{
                                 <div className="accordion-body">
                                     <div className="contElegirBandana">
                                         <label>Color: </label>
-                                        <div onClick={agregarBandana} id="0" className="elegirBandana">Marron</div>
-                                        <div onClick={agregarBandana} id="1" className="elegirBandana">Blanca</div>
-                                        <div onClick={agregarBandana} id="2" className="elegirBandana">Oscura</div>
-                                        <div onClick={agregarBandana} id="3" className="elegirBandana">Azul</div>
-                                        <div onClick={agregarBandana} id="4" className="elegirBandana">Rosa</div>
-                                        <div onClick={agregarBandana} id="5" className="elegirBandana">Quitar</div>
+                                        <div onClick={agregarBandana} id="1" className="elegirBandana">Marron</div>
+                                        <div onClick={agregarBandana} id="2" className="elegirBandana">Blanca</div>
+                                        <div onClick={agregarBandana} id="3" className="elegirBandana">Oscura</div>
+                                        <div onClick={agregarBandana} id="4" className="elegirBandana">Azul</div>
+                                        <div onClick={agregarBandana} id="5" className="elegirBandana">Rosa</div>
+                                        <div onClick={agregarBandana} id="0" className="elegirBandana">Quitar</div>
                                     </div>
                                     <div className="contElegirBandana my-3">
                                         <label>Aldea: </label>
-                                        <div onClick={agregarAldea} id="0" className="elegirBandana">Suna</div>
-                                        <div onClick={agregarAldea} id="1" className="elegirBandana">Iwa</div>
-                                        <div onClick={agregarAldea} id="2" className="elegirBandana">Kiri</div>
-                                        <div onClick={agregarAldea} id="3" className="elegirBandana">Konoha</div>
-                                        <div onClick={agregarTachar} id="4" className="elegirBandana">Tachar</div>
+                                        <div onClick={agregarAldea} id="1" className="elegirBandana">Suna</div>
+                                        <div onClick={agregarAldea} id="2" className="elegirBandana">Iwa</div>
+                                        <div onClick={agregarAldea} id="3" className="elegirBandana">Kiri</div>
+                                        <div onClick={agregarAldea} id="4" className="elegirBandana">Konoha</div>
+                                        <div onClick={agregarAldea} id="0" className="elegirBandana">Quitar</div>
+                                    </div>
+                                    <div className="contElegirBandana">
+                                        <label>Marca: </label>
+                                        <div onClick={agregarTachar} id="1" className="elegirBandana">Tachon</div>
+                                        <div onClick={agregarTachar} id="1" className="elegirBandana">Rasguño</div>
+                                        <div onClick={agregarTachar} id="1" className="elegirBandana">Oxido</div>
+                                        <div onClick={agregarTachar} id="1" className="elegirBandana">Mordida</div>
+                                        <div onClick={agregarTachar} id="1" className="elegirBandana">Grietas</div>
+                                        <div onClick={agregarTachar} id="0" className="elegirBandana">Quitar</div>
                                     </div>
                                 </div>
                             </div>
@@ -178,14 +203,14 @@ const AvatarOpciones = ()=>{
                             <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div className="accordion-body">
                                     <div className="contElegirColor">
-                                        <div onClick={agregarMascara} id="0" className="elegirBandana c0">1</div>
-                                        <div onClick={agregarMascara} id="1" className="elegirBandana c0">2</div>
-                                        <div onClick={agregarMascara} id="2" className="elegirBandana c0">3</div>
-                                        <div onClick={agregarMascara} id="3" className="elegirBandana c0">4</div>
-                                        <div onClick={agregarMascara} id="4" className="elegirBandana c0">5</div>
-                                        <div onClick={agregarMascara} id="5" className="elegirBandana c0">6</div>
-                                        <div onClick={agregarMascara} id="6" className="elegirBandana c0">7</div>
-                                        <div onClick={agregarMascara} id="7" className="elegirBandana c0">Quitar</div>
+                                        <div onClick={agregarMascara} id="1" className="elegirBandana c0">1</div>
+                                        <div onClick={agregarMascara} id="2" className="elegirBandana c0">2</div>
+                                        <div onClick={agregarMascara} id="3" className="elegirBandana c0">3</div>
+                                        <div onClick={agregarMascara} id="4" className="elegirBandana c0">4</div>
+                                        <div onClick={agregarMascara} id="5" className="elegirBandana c0">5</div>
+                                        <div onClick={agregarMascara} id="6" className="elegirBandana c0">6</div>
+                                        <div onClick={agregarMascara} id="7" className="elegirBandana c0">7</div>
+                                        <div onClick={agregarMascara} id="0" className="elegirBandana c0">Quitar</div>
                                     </div>
                                 </div>
                             </div>
