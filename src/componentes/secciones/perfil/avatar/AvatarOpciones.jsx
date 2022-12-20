@@ -45,6 +45,7 @@ import scratchTorn from "./caracterAvatar/piel/aldea-tachado.svg";
 
 const AvatarOpciones = ()=>{
 
+    
     // tarea: condicionar la bandana con los simbolos de las aldeas, dependencia uno de otro(si no hay bandana, no tiene que haber simbolo)
     // > Challenge: Accepted ;)
     let pielArreglo = [pielUno, pielDos, pielTres, pielCuatro, pielCinco, pielSeis, pielSiete, 

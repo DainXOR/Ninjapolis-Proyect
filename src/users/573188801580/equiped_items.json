@@ -1,0 +1,49 @@
+{
+    "appareance":
+    {
+        "skin":{
+            "color": "#fdddca"
+        },
+        "eyes":{
+            "left":{
+                "iris": "#ff0000",
+                "sclera": "#eee2d7",
+                "dojutsu":{
+                    "type": "sharingan",
+                    "variant": "eternal mangekyo"
+                },
+                "pattern": "none"
+            },
+            "right":{
+                "iris": "#ff0000",
+                "sclera": "#eee2d7",
+                "dojutsu":{
+                    "type": "tenseigan",
+                    "variant": "none"
+                },
+                "pattern": "none"
+            },
+            "mid":{
+                "iris": "#ff0000",
+                "sclera": "#eee2d7",
+                "dojutsu":{
+                    "type": "rinne sharingan",
+                    "variant": "none"
+                },
+                "pattern": "none"
+            }
+        },
+        "hair":{
+            "style": "long",
+            "color": "#808080"
+        }
+    },
+    "accessories":{
+        "headband": "0",
+        "mask": "4",
+        "hat": "2"
+
+            
+        
+    }
+}

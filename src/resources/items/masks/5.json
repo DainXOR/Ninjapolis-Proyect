@@ -1,0 +1,10 @@
+{
+    "cost": 5000,
+    "point_req": 0,
+    "coloreable": false,
+    "hold_pattern": false,
+    "material": "plastic",
+    "type": "mask",
+    "style": 1,
+    "position": 0
+}

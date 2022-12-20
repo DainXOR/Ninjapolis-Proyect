@@ -1,0 +1,10 @@
+{
+    "cost": 2000,
+    "point_req": 0,
+    "coloreable": false,
+    "hold_pattern": false,
+    "material": "metal",
+    "type": "helmet",
+    "style": 0,
+    "position": 0
+}

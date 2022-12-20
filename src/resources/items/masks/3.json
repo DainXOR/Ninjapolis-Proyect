@@ -1,0 +1,10 @@
+{
+    "cost": 10000,
+    "point_req": 10000,
+    "coloreable": false,
+    "hold_pattern": false,
+    "material": "metal",
+    "type": "normal",
+    "style": 0,
+    "position": 0
+}

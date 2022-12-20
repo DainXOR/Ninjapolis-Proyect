@@ -1,0 +1,10 @@
+{
+    "cost": 200,
+    "point_req": 0,
+    "coloreable": true,
+    "hold_pattern": true,
+    "material": "wool",
+    "type": "headband",
+    "style": 0,
+    "position": 0
+}

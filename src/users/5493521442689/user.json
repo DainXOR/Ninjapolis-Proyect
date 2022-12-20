@@ -1,0 +1,14 @@
+{
+    "id": 5493521442689,
+    "prefix": 54,
+    "name_1": "Rodrigo",
+    "name_2": "",
+    "surname_1": "Quinteros",
+    "surname_2": "",
+    "email": "rodrifachero69@hotmail.com",
+    "password_hash": "5994471ABB01112AFCC18159F6CC74B4F511B99806DA59B3CAF5A9C173CACFC5",
+    "nickname": "Rodri",
+    "seal": "{ProyectDir}/src/resources/users/5493521442689/seal.png",
+    "group": "Sunagakure",
+    "position": 0
+}

@@ -8,6 +8,7 @@ import NotFound from './componentes/NotFound';
 import PaginaPrincipal from './componentes/paginaPrincipal/PaginaPrincipal';
 import Autogestion from './componentes/secciones/autogestion/Autogestion';
 import Perfil from './componentes/secciones/perfil/Perfil';
+import Shop from './componentes/secciones/shop_page/shop';
 
 // Aldeas
 import Sunagakure from './componentes/secciones/aldeas/Sunagakure';
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/paginaPrincipal" element={<PaginaPrincipal/>} />
           <Route exact path="/paginaPrincipal/gestion" element={<Autogestion/>} />
           <Route exact path="/paginaPrincipal/perfil" element={<Perfil/>} />
+          <Route exact path="/paginaPrincipal/shop" element={<Shop/>} />
           <Route exact path="/aldeas/sunagakure" element={<Sunagakure/>}/>
           <Route exact path="/aldeas/iwagakure" element={<Iwagakure/>}/>
           <Route exact path="/aldeas/kirigakure" element={<Kirigakure/>}/>

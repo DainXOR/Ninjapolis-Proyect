@@ -11,7 +11,8 @@ const Autogestion = ()=>{
             <br></br>
             <br></br>
             <Dashboard/>
-            Autogestion
+            <center><h1>Autogestion</h1></center>
+            
         </div>
     )
 }

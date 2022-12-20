@@ -1,0 +1,14 @@
+{
+    "id": 573188801580,
+    "prefix": 57,
+    "name_1": "Daniel",
+    "name_2": "",
+    "surname_1": "Leon",
+    "surname_2": "Danzo",
+    "email": "dleon_2407@hotmail.com",
+    "password_hash": "767E0BBF5310E01E9720160B69D5F43C9F9CD63349509F14DD6EA7303699D1BD",
+    "nickname": "Dain",
+    "seal": "{ProyectDir}/src/resources/users/573188801580/seal.png",
+    "group": "Sunagakure",
+    "position": 0
+}

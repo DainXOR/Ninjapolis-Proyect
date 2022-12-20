@@ -1,0 +1,10 @@
+{
+    "cost": 500,
+    "point_req": 5000,
+    "coloreable": true,
+    "hold_pattern": true,
+    "material": "cloth",
+    "type": "neck",
+    "style": 0,
+    "position": 0
+}

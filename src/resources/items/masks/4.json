@@ -1,0 +1,10 @@
+{
+    "cost": 50000,
+    "point_req": 1000000,
+    "coloreable": false,
+    "hold_pattern": false,
+    "material": "plastic",
+    "type": "crow",
+    "style": 0,
+    "position": 0
+}
