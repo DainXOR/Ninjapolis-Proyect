@@ -16,14 +16,12 @@ const ShopMenu = ()=>{
     const closeMenu = (e)=>{
         setShow(false);
     }
-
     const redirect = (e)=>{
         e.preventDefault();
 
         setSection(e.target.id);
 
     }
-
     return(
         <div>
             {

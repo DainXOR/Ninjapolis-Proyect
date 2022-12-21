@@ -2,9 +2,10 @@ import "../perfil.css";
 import AvatarOpciones from "./AvatarOpciones";
 
 const Avatar = ()=>{
+
     return(
         <div>
-            <button type="button" className="btn btn-dark py-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-dark py-2 mx-5 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Modificar Avatar
             </button>
 

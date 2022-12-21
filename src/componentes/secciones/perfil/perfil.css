@@ -16,6 +16,13 @@
     width: 250px;
 }
 
+.cardAvatarCont{
+    width: 200px;
+    height: 200px;
+    background-color: #bcc5c7;
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
 /* Color de Piel */
 .contElegirColor{
