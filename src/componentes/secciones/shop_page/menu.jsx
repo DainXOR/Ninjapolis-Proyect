@@ -11,7 +11,6 @@ const ShopMenu = ()=>{
     const [show, setShow] = useState(false);
     const [section, setSection] = useState(dirs[0]);
 
-
     const redirect = (e)=>{
         e.preventDefault();
 

@@ -1,62 +1,14 @@
 import { useState } from "react";
 import "../perfil.css";
-// color de piel
-import pielUno from "./caracterAvatar/piel/pielClara-uno.svg";
-import pielDos from "./caracterAvatar/piel/pielClara-dos.svg";
-import pielTres from "./caracterAvatar/piel/pielClara-tres.svg";
-import pielCuatro from "./caracterAvatar/piel/pielAzul.svg";
-import pielCinco from "./caracterAvatar/piel/pielVerde.svg";
-import pielSeis from "./caracterAvatar/piel/pielMorada.svg";
-import pielSiete from "./caracterAvatar/piel/pielMorena-uno.svg";
-import pielOcho from "./caracterAvatar/piel/pielMorena-dos.svg";
-import pielNueve from "./caracterAvatar/piel/pielMorena-tres.svg";
-import pielDies from "./caracterAvatar/piel/pielAzul-uno.svg";
-import pielOnce from "./caracterAvatar/piel/pielVerde-uno.svg";
-// Bandanas
-import bandanaUno from "./caracterAvatar/piel/bandana-uno.svg";
-import bandanaDos from "./caracterAvatar/piel/bandana-dos.svg";
-import bandanaTres from "./caracterAvatar/piel/bandana-tres.svg";
-import bandanaCuatro from "./caracterAvatar/piel/bandana-cuatro.svg";
-import bandanaCinco from "./caracterAvatar/piel/bandana-cinco.svg";
-// aldeas
-import aldeaUno from "./caracterAvatar/piel/aldea-uno.svg";
-import aldeaDos from "./caracterAvatar/piel/aldea-dos.svg";
-import aldeaTres from "./caracterAvatar/piel/aldea-tres.svg";
-import aldeaCuatro from "./caracterAvatar/piel/aldea-cuatro.svg";
-// Mascaras
-import mascaraUno from "./caracterAvatar/piel/mascara-uno.svg";   
-import mascaraDos from "./caracterAvatar/piel/mascara-dos.svg";  
-import mascaraTres from "./caracterAvatar/piel/mascara-tres.svg";
-import mascaraCuatro from "./caracterAvatar/piel/mascara-cuatro.svg";
-import mascaraCinco from "./caracterAvatar/piel/mascara-cinco.svg";
-import mascaraSeis from "./caracterAvatar/piel/mascara-seis.svg";   // 1) Subir diseño a la carpeta piel (por ahora)
-import mascaraSiete from "./caracterAvatar/piel/mascara-siete.svg"; // <---2) Importar la imagen de esta forma
-// Rayones
-import scratchStrike from "./caracterAvatar/piel/aldea-tachado.svg";
-import scratchStrikes from "./caracterAvatar/piel/aldea-tachado.svg";
-import scratchRust from "./caracterAvatar/piel/aldea-tachado.svg";
-import scratchBite from "./caracterAvatar/piel/aldea-tachado.svg";
-import scratchTorn from "./caracterAvatar/piel/aldea-tachado.svg";
-//import scratchStrikes from "./caracterAvatar/scratch/strike_2.svg";
-//import scratchRust from "./caracterAvatar/scratch/rust_1.svg";
-//import scratchBite from "./caracterAvatar/scratch/bite_1.svg";
-//import scratchTorn from "./caracterAvatar/scratch/torn_1.svg";
-
+import { AvPiel, AvBandana, AvAldeas, AvMascaras, AvScrath } from "./srcImpAvatar/ImpAvatar";
 
 const AvatarOpciones = ()=>{
-
     
-    // tarea: condicionar la bandana con los simbolos de las aldeas, dependencia uno de otro(si no hay bandana, no tiene que haber simbolo)
-    // > Challenge: Accepted ;)
-    let pielArreglo = [pielUno, pielDos, pielTres, pielCuatro, pielCinco, pielSeis, pielSiete, 
-                       pielOcho, pielNueve, pielDies, pielOnce];
-    let bandanaArreglo = [bandanaUno, bandanaDos, bandanaTres, bandanaCuatro, 
-                          bandanaCinco];   // <--- 3) Crear el arreglo con los import del mismo tipo
-    let aldeaArreglo = [aldeaUno, aldeaDos, aldeaTres, aldeaCuatro];
-    let mascaraArreglo = [mascaraUno, mascaraDos, mascaraTres, mascaraCuatro, mascaraCinco, 
-                          mascaraSeis, mascaraSiete];
-
-    let scratchTypes = [scratchStrike, scratchStrikes, scratchRust, scratchBite, scratchTorn];
+    const pielArreglo =  new AvPiel();
+    const bandanaArreglo = new AvBandana();
+    const aldeaArreglo = new AvAldeas();
+    const mascaraArreglo = new AvMascaras();
+    const scratchTypes = new AvScrath();
 
     const [ piel, setPiel ] = useState(pielArreglo[0]); 
 
@@ -126,7 +78,6 @@ const AvatarOpciones = ()=>{
                     {showScratch && <img alt="" className="position-absolute" src={scratch} />} 
                     {mostrarMascara && <img alt="" className="position-absolute" src={mascara} />}  {/* 7) Colocar de esta forma las variables de la parte 4 y 5, ej: mostrar(nombreDeCategoria) y (categoria) - dependiendo de su importancia, estar atento al orden. Por ej: una mascara siempre va encima de la boca, asi que primero se pone la boca, y debajo(en el codigo) la mascara  */}
                 </div>
-                
                 <div>
                     <div className="accordion" id="accordionExample"> {/* 8) copiar este div y pegarlo en la ultima fila (estar atento de como empieza y terminan los divs)  */}
                         <div className="accordion-item">
