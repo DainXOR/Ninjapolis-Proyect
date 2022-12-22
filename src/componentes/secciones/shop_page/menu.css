@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+.menuSide{
+    width: 80px;
+    height: 100%;
+    background: #0a1a1d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 14px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #0a1a1d;
+    transition: 300ms;
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menuSide::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menuSide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.menuBody{
+    padding: 10px 0px;
+    position: absolute;
+    top: 80px;
+}
+
+.menuBody a{
+    margin: 0;
+    padding: 0px 0px;
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #ffffff94;
+    font-family: 'Fira Code', monospace;
+    transition: all 300ms;
+}
+
+.menuBody i{
+    margin-left: 20px;
+}
+
+.menuSide:hover{
+    width: 220px;
+    height: 100%;
+    background: #0a1a1d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 14px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #0a1a1d;
+    transition: 300ms;
+}
+
+.menuBody:hover a{
+    color: #ffffff94;
+    display: block;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    transition: color 300ms;
+}
+
+.menuBody:hover a:hover{
+    color: #fff;
+}
+
+.menuBody .option{
+    padding: 0px -10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+}
+
+.menuBody .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.menuBody.option h4{
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: #fff;
+    position: absolute;
+}
+
+.bodyMove{
+    margin-left: 250px;
+}
+
+.menuExpand{
+    width: 250px;
+}
