@@ -11,15 +11,6 @@ const ShopMenu = ()=>{
     const [show, setShow] = useState(false);
     const [section, setSection] = useState(dirs[0]);
 
-    const redirect = (e)=>{
-        e.preventDefault();
-
-        setSection(e.target.id);
-
-    }
-
-    
-
     return(
         <div className="menuSide" id="menu_side">
             <div className="menuBody">
