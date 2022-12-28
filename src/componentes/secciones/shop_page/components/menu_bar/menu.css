@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 .menuSide{
-    width: 80px;
+    width: 50px;
     height: 100%;
     background: #0a1a1d;
     position: fixed;
@@ -12,7 +12,7 @@
     z-index: 300;
     overflow: hidden;
     overflow-y: scroll;
-    border-right: 20px solid #0a1a1d;
+    border-right: 10px solid #0a1a1d;
     transition: 300ms;
 }
 
@@ -20,7 +20,6 @@
 .menuSide::-webkit-scrollbar{
     display: none;
 }
-
 /*Ocultar scroll para IE, Edge y Firefox*/
 .menuSide{
     -ms-overflow-style: none;
@@ -28,11 +27,10 @@
 }
 
 .menuBody{
-    padding: 10px 0px;
+    padding: 0px 0px;
     position: absolute;
     top: 80px;
 }
-
 .menuBody a{
     margin: 0;
     padding: 0px 0px;
@@ -43,13 +41,17 @@
     font-family: 'Fira Code', monospace;
     transition: all 300ms;
 }
-
 .menuBody i{
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 25px;
+    
+    cursor: default;
 }
 
 .menuSide:hover{
-    width: 220px;
+    width: 210px;
     height: 100%;
     background: #0a1a1d;
     position: fixed;
@@ -60,58 +62,66 @@
     z-index: 300;
     overflow: hidden;
     overflow-y: scroll;
-    border-right: 20px solid #0a1a1d;
     transition: 300ms;
 }
-
 .menuBody:hover a{
-    color: #ffffff94;
+    color: rgba(255, 255, 255, 0.58);
     display: block;
     text-decoration: none;
     font-family: 'Fira Code', monospace;
     transition: color 300ms;
 }
-
 .menuBody:hover a:hover{
     color: #fff;
 }
 
 .menuBody .option{
-    padding: 0px -10px;
     display: flex;
     align-items: center;
     text-decoration: none;
     font-family: 'Fira Code', monospace;
 }
-
-.menuBody .option i{
-    width: 20px;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-.menuBody.option h4{
-    font-weight: lighter;
+.menuBody .option h4{
     cursor: pointer;
 }
 
 a.selected{
     color: #fff;
-
+}
+a.selected i{
+    filter: invert() opacity(100%);
 }
 
 .selected:before{
     content: '';
-    width: 3px;
-    height: 80%;
+    width: 2px;
+    height: 100%;
     background: #fff;
     position: absolute;
+    bottom: 10px;
+    
 }
 
-.bodyMove{
-    margin-left: 250px;
+
+.icon{
+    content: '';
+    background-repeat: no-repeat;
+    background-position: right;
+    color: rgba(255, 255, 255, 0);
+    margin: 0px;
+    filter: invert() opacity(58%);
+    transition: 300ms;
 }
 
-.menuExpand{
-    width: 250px;
+
+.icon{
+    background-image: url("../../../../../resources/media/icons/dummy.png");
+    background-size: 50%;
+    
 }
+
+.icon_menu{
+    background-image: url("../../../../../resources/media/icons/homepage.png");
+    background-size: 20px;
+}
+

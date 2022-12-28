@@ -1,7 +1,7 @@
 import "./shop.css";
 
 import NavegacionBar from "../navegacion/Navegacion";
-import MenuBar from "./menu";
+import MenuBar from "./components/menu_bar/menu";
 
 const Shop = ()=>{
 
@@ -16,7 +16,8 @@ const Shop = ()=>{
             <br/>
             <br/>
             <br/>
-            <MenuBar/>
+            <MenuBar main="selected"/>
+
         </div>
     )
 }

@@ -34,7 +34,7 @@ const Navegacion = (props)=>{
             {ninjapolis && <Navigate to="/paginaPrincipal"/>}
             {gestion && <Navigate to="/paginaPrincipal/gestion"/>}
             {perfil && <Navigate to="/paginaPrincipal/perfil" /> }
-            {shop && <Navigate to="/paginaPrincipal/shop" /> }
+            {shop && <Navigate to="/paginaPrincipal/shop/main" /> }
         </nav>
     )
 }

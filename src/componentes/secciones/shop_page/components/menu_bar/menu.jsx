@@ -1,78 +1,63 @@
 import "./menu.css";
 
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
-import { hover } from "@testing-library/user-event/dist/hover";
+// &lt;$&gt; Simbolo <$>
 
-const ShopMenu = ()=>{
-
-    const dirs = ["main", "face", "head", "legs", "feets", "body", "hands", "arms", "jewelry"];
-
-    const [show, setShow] = useState(false);
-    const [section, setSection] = useState(dirs[0]);
+const ShopMenu = (actualSection)=>{
 
     return(
         <div className="menuSide" id="menu_side">
             <div className="menuBody">
-                <a href="#" className="selected">
+                <a href="./main" className={actualSection.main}>
                     <div className="option">
-                        <i className="icon_menu" title="menu">&lt;$&gt;</i>
+                        <i className="icon icon_menu" title="menu">.</i>
                         <h4>Menu</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./head" className={actualSection.head}>
                     <div className="option">
-                        <i className="far fa-snowflake" title="head">&lt;$&gt;</i>
+                        <i className="icon icon_hat" title="head">.</i>
                         <h4>Sombreros</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./face" className={actualSection.face}>
                     <div className="option">
-                        <i className="icon_mask" title="face">&lt;$&gt;</i>
+                        <i className="icon icon_mask" title="face">.</i>
                         <h4>Mascaras</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./body" className={actualSection.body}>
                     <div className="option">
-                        <i className="icon_body" title="body">&lt;$&gt;</i>
+                        <i className="icon icon_body" title="body">.</i>
                         <h4>Cuerpo</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./legs" className={actualSection.legs}>
                     <div className="option">
-                        <i className="icon_legs" title="legs">&lt;$&gt;</i>
+                        <i className="icon icon_legs" title="legs">.</i>
                         <h4>Pantalones</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./feets" className={actualSection.feets}>
                     <div className="option">
-                        <i className="icon_shoes" title="feets">&lt;$&gt;</i>
-                        <h4>Mmm Patas</h4>
+                        <i className="icon icon_feets" title="feets">.</i>
+                        <h4>Patas</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./arms" className={actualSection.arms}>
                     <div className="option">
-                        <i className="icon_arm" title="arms">&lt;$&gt;</i>
+                        <i className="icon icon_arm" title="arms">.</i>
                         <h4>Brazos</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./hands" className={actualSection.hands}>
                     <div className="option">
-                        <i className="icon_gloves" title="hands">&lt;$&gt;</i>
+                        <i className="icon icon_gloves" title="hands">.</i>
                         <h4>Manos</h4>
                     </div>
                 </a>
-
-                <a href="#">
+                <a href="./jewelry" className={actualSection.jewelry}>
                     <div className="option">
-                        <i className="icon_necklace" title="jewelry">&lt;$&gt;</i>
+                        <i className="icon icon_necklace" title="jewelry">.</i>
                         <h4>Joyeria</h4>
                     </div>
                 </a>
