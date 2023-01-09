@@ -57,7 +57,7 @@ const ShopMenu = (actualSection)=>{
                 </a>
                 <a href="./jewelry" className={actualSection.jewelry}>
                     <div className="option">
-                        <i className="icon icon_necklace" title="jewelry">.</i>
+                        <i className="icon icon_jewelry" title="jewelry">.</i>
                         <h4>Joyeria</h4>
                     </div>
                 </a>

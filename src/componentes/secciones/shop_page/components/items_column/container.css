@@ -1,0 +1,26 @@
+.itemsColumn{
+    display: inline-block;
+    vertical-align: middle;
+
+    box-sizing: border-box;
+
+    width: 200px;
+    height: 500px;
+    position: relative;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+
+    overflow-y: hidden scroll;
+    transition: 300ms;
+}
+
+.itemsColumn::-webkit-scrollbar{
+    display: none;
+}
+/*Ocultar scroll para IE, Edge y Firefox*/
+.itemsColumn{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

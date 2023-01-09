@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 .menuSide{
-    width: 50px;
+    width: 40px;
     height: 100%;
     background: #0a1a1d;
     position: fixed;
     top: 0;
     left: 0;
+    right: 40px;
     color: #fff;
     font-size: 14px;
     z-index: 300;
     overflow: hidden;
     overflow-y: scroll;
-    border-right: 10px solid #0a1a1d;
     transition: 300ms;
 }
 
@@ -27,27 +27,17 @@
 }
 
 .menuBody{
-    padding: 0px 0px;
     position: absolute;
     top: 80px;
 }
 .menuBody a{
     margin: 0;
-    padding: 0px 0px;
     position: relative;
     box-sizing: border-box;
     text-decoration: none;
     color: #ffffff94;
     font-family: 'Fira Code', monospace;
     transition: all 300ms;
-}
-.menuBody i{
-    margin-left: 10px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    width: 25px;
-    
-    cursor: default;
 }
 
 .menuSide:hover{
@@ -57,22 +47,35 @@
     position: fixed;
     top: 0;
     left: 0;
+    right: 210px;
     color: #fff;
-    font-size: 14px;
     z-index: 300;
     overflow: hidden;
     overflow-y: scroll;
     transition: 300ms;
 }
+
+.shopBody{
+    margin-left: 40px;
+    transition: 300ms;
+}
+.menuSide:hover ~ .shopBody{
+    margin-left: 210px;
+    transition: 300ms;
+}
+
 .menuBody:hover a{
     color: rgba(255, 255, 255, 0.58);
     display: block;
     text-decoration: none;
-    font-family: 'Fira Code', monospace;
+    
     transition: color 300ms;
 }
 .menuBody:hover a:hover{
     color: #fff;
+    font-weight: lighter;
+    font-style: italic;
+    transition: 300ms;
 }
 
 .menuBody .option{
@@ -89,7 +92,7 @@ a.selected{
     color: #fff;
 }
 a.selected i{
-    filter: invert() opacity(100%);
+    filter: invert() opacity(100%);    
 }
 
 .selected:before{
@@ -111,17 +114,57 @@ a.selected i{
     margin: 0px;
     filter: invert() opacity(58%);
     transition: 300ms;
+
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 25px;
+    
+    background-size: 10px;
+
+    cursor: pointer;
+}
+
+.menuSide:hover i{
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 25px;
+    
+    background-size: 20px;
+
+    cursor: pointer;
 }
 
 
 .icon{
-    background-image: url("../../../../../resources/media/icons/dummy.png");
-    background-size: 50%;
+    background-image: url("../../../../../resources/media/icons/dummy_icon.png");
+}
+.icon_menu{
+    background-image: url("../../../../../resources/media/icons/homepage_icon.png");
     
 }
-
-.icon_menu{
-    background-image: url("../../../../../resources/media/icons/homepage.png");
-    background-size: 20px;
+.icon_hat{
+    background-image: url("../../../../../resources/media/icons/headband_icon.png");
 }
-
+.icon_mask{
+    background-image: url("../../../../../resources/media/icons/smiling_mask_icon.png");
+}
+.icon_body{
+    background-image: url("../../../../../resources/media/icons/formal_jacket_icon.png");
+}
+.icon_legs{
+    background-image: url("../../../../../resources/media/icons/pants_icon.png");
+}
+.icon_feets{
+    background-image: url("../../../../../resources/media/icons/formal_shoes_icon.png");
+}
+.icon_arm{
+    background-image: url("../../../../../resources/media/icons/tattoo_arm_icon.png");
+}
+.icon_gloves{
+    background-image: url("../../../../../resources/media/icons/glove_icon.png");
+}
+.icon_jewelry{
+    background-image: url("../../../../../resources/media/icons/necklace_icon.png");
+}
